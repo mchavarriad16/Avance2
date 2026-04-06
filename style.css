@@ -1,0 +1,273 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Roboto', sans-serif;
+font-size:1rem;
+line-height:1.5;
+}
+
+h1,h2,h3{
+font-family:'Poppins', sans-serif;
+}
+
+.header{
+background:rgb(28,67,28);
+color:white;
+}
+
+/* nav */
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1.5rem 5%;
+position:relative;
+}
+
+#menu-toggle-checkbox{
+display:none;
+}
+
+/* menu hamburguesa */
+
+.menu-toggle{
+display:none;
+font-size:1.8rem;
+cursor:pointer;
+position:relative;
+width:30px;
+height:30px;
+}
+
+.menu-toggle span{
+position:absolute;
+left:0;
+top:0;
+transition:0.3s;
+}
+
+.icon-close{
+opacity:0;
+}
+
+#menu-toggle-checkbox:checked + .menu-toggle .icon-open{
+opacity:0;
+}
+
+#menu-toggle-checkbox:checked + .menu-toggle .icon-close{
+opacity:1;
+}
+
+/* Menu */
+
+.menu{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+
+/*iconos svg*/
+
+.menu a svg{
+flex-shrink:0; /*controla cuánto se puede encoger (reducir de tamaño)*/
+}
+
+/* Hero */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:80vh;
+text-align:center;
+padding:3rem 2rem;
+gap:2.5rem;
+}
+
+.hero-content{
+max-width:40rem;
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+
+.hero-img{
+width:100%;
+max-width:40rem;
+border-radius:0.5rem;
+margin-bottom:1rem;
+}
+
+.hero h2{
+font-size:clamp(2rem,4vw,2.6rem);
+line-height:1.2;
+}
+
+.hero p{
+font-size:1.1rem;
+color:#f0f0f0;
+}
+
+/* Boton */
+
+.btn{
+display:inline-block;
+padding:0.5em 1.2em;
+background:rgb(232, 209, 180);
+color:black;
+text-decoration:none;
+border-radius:0.3rem;
+font-size:0.9rem;
+
+width: fit-content;
+margin: 0 auto;
+}
+
+/* Secciones */
+
+main section{
+padding:4rem 10%;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
+gap:2rem;
+margin-top:2rem;
+}
+
+.services{
+background:#f5f5f5;
+text-align:center;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:2rem;
+margin-top:2rem;
+}
+
+/* Cards */
+
+.card{
+background:rgb(232,209,180);
+padding:2rem;
+border-radius:0.5rem;
+}
+
+.imagen-img{
+width:100%;
+aspect-ratio:2/1;
+object-fit:cover;
+border-radius:0.5rem;
+}
+
+/* Contacto */
+
+.contact{
+text-align:center;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:1rem;
+max-width:30rem;
+margin:auto;
+}
+
+input,textarea{
+padding:0.8em;
+width:100%;
+}
+
+/* Footer */
+
+.footer{
+text-align:center;
+padding:2rem;
+background:rgb(28,67,28);
+color:white;
+}
+
+/* Whatsapp */
+
+.whatsapp-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:green;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* Media Queries */
+
+/*Tablet*/
+
+@media(max-width:1024px){
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/*Mobile*/
+
+@media(max-width:768px){
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.menu{
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:rgb(28,67,28);
+
+flex-direction:column;
+align-items:center;
+gap:1.5rem;
+
+max-height:0;
+overflow:hidden;
+
+transition:0.4s;
+}
+
+#menu-toggle-checkbox:checked ~ .menu{
+max-height:300px;
+padding:1.5rem 0;
+}
+
+.menu a{
+width:100%;
+text-align:center;
+padding:0.8rem 0;
+border-top:1px solid rgba(255,255,255,0.1);
+font-size:1.1rem;
+}
+
+}
